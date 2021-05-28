@@ -27,7 +27,9 @@ namespace WEBAPI
             services.AddControllers();
             services.AddDbContext<BDPruebaSinergiaSSContext>(option =>
             option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IBrandRepository, BrandRepository>();
+            services.AddTransient<ISupplierRepository, SupplierRepository>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WEBAPI", Version = "v1" });
