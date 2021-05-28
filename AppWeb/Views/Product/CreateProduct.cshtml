@@ -1,0 +1,68 @@
+﻿@model Models.Product
+
+@{
+    ViewData["Title"] = "CreateProduct";
+}
+
+<h1>Crear Product</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateProduct">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Stock" class="control-label"></label>
+                <input asp-for="Stock" class="form-control" />
+                <span asp-validation-for="Stock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Measure" class="control-label"></label>
+                <input asp-for="Measure" class="form-control" />
+                <span asp-validation-for="Measure" class="text-danger"></span>
+            </div>
+            <div class=""form-group">
+                <label class="control-label">Marca</label>
+                <select id="IdBrand" asp-for="IdBrand" asp-items="@(new SelectList(@ViewBag.IdBrand, "Id","BrandName"))" class="select2_demo_3 single-line form-control single-line">
+                    <option disabled selected>Seleccione</option>
+                </select>
+
+                <span asp-validation-for="IdBrand" class="text-danger"></span>
+            </div>
+            <div class="" form-group">
+                <label class="control-label">Categoria</label>
+                <select id="IdCategory" asp-for="IdCategory" asp-items="@(new SelectList(@ViewBag.IdCategory, "Id","CategoryName"))" class="select2_demo_3 single-line form-control single-line">
+                    <option disabled selected>Seleccione</option>
+                </select>
+
+                <span asp-validation-for="IdCategory" class="text-danger"></span>
+            </div>
+            <div class="" form-group">
+                <label class="control-label">Proveedor</label>
+                <select id="IdSupplier" asp-for="IdSupplier" asp-items="@(new SelectList(@ViewBag.IdSupplier, "Id","NameCompany"))" class="select2_demo_3 single-line form-control single-line">
+                    <option disabled selected>Seleccione</option>
+                </select>
+
+                <span asp-validation-for="IdSupplier" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="col-12">
+                    <input type="submit" class="btn btn-primary" value="Guardar" />
+                    <a asp-action="Index" class="btn btn-danger"> Cancelar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
