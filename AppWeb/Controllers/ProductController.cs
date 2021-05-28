@@ -79,18 +79,18 @@ namespace AppWeb.Controllers
             return View(product);
         }
 
-        public IActionResult DeleteProduct(int id)
-        {
-            if (id <= 0)
-            {
-                return NotFound();
-            }
+        //public IActionResult DeleteProduct(int id)
+        //{
+        //    if (id <= 0)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var productToDelete = _productRepository.GetProductById(id);
+        //    var productToDelete = _productRepository.GetProductById(id);
 
-            _productRepository.Delete(productToDelete);
+        //    _productRepository.Delete(productToDelete);
 
-            return RedirectToAction("Index");
-        }
+        //    return RedirectToAction("Index");
+        //}
     }
 }
