@@ -12,11 +12,13 @@ namespace Repository
         public ProductRepository(BDPruebaSinergiaSSContext context) : base(context)
         {
         }
-        public List<Product> GetProductById(int id)
+        public Product GetProductById(int id)
         {
             
             var param = new SqlParameter("@id", id);
-            return _context.Products.FromSqlInterpolated($"sp_GetProductById {param}").ToList();
+            var product = _context.Products.FromSqlInterpolated($"sp_GetProductById {param}").ToList();
+            return product.FirstOrDefault();
+
             //return _context.Products.FromSqlRaw($"exec sp_GetProductById {param}").Single();
         }
 

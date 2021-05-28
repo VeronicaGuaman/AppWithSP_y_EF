@@ -5,7 +5,7 @@ namespace Repository.Interfaces
 {
     public interface IProductRepository : IRepository<Product>
     {
-        List<Product> GetProductById(int id);
+        Product GetProductById(int id);
         IEnumerable<Product> GetProducts();
     }
 }
