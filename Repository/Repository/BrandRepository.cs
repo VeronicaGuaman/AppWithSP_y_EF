@@ -8,9 +8,7 @@ namespace Repository
 {
     public class BrandRepository : Repository<Brand>, IBrandRepository
     {
-        public BrandRepository(BDPruebaSinergiaSSContext context) : base(context)
-        {
-        }
+        public BrandRepository(BDPruebaSinergiaSSContext context) : base(context){}
 
         public IEnumerable<Brand> GetBrands()
         {

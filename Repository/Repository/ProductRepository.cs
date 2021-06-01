@@ -13,13 +13,10 @@ namespace Repository
         {
         }
         public Product GetProductById(int id)
-        {
-            
+        {            
             var param = new SqlParameter("@id", id);
             var product = _context.Products.FromSqlInterpolated($"sp_GetProductById {param}").ToList();
             return product.FirstOrDefault();
-
-            //return _context.Products.FromSqlRaw($"exec sp_GetProductById {param}").Single();
         }
 
         public IEnumerable<Product> GetProducts()

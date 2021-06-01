@@ -45,8 +45,13 @@ namespace AppWeb.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateProduct(Product product)
         {
-            _productRepository.Create(product);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _productRepository.Create(product);
+                return RedirectToAction("Index");
+            }
+
+            return View(product);
         }
 
         public IActionResult updateProduct(int id)

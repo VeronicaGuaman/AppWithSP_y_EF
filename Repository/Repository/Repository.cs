@@ -10,10 +10,8 @@ namespace Repository
     {
         protected BDPruebaSinergiaSSContext _context;
 
-        public Repository(BDPruebaSinergiaSSContext context)
-        {
-            _context = context;
-        }
+        public Repository(BDPruebaSinergiaSSContext context) => _context = context;
+
         protected void Save() => _context.SaveChanges();
         protected void SaveAsync() => _context.SaveChangesAsync();
         public void Create(T entity)
@@ -27,7 +25,6 @@ namespace Repository
             _context.Remove(entity);
             Save();
         }
-
 
         public void Update(T entity)
         {

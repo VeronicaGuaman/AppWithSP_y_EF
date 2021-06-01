@@ -8,9 +8,7 @@ namespace Repository
 {
     public class SupplierRepository : Repository<Supplier>, ISupplierRepository
     {
-        public SupplierRepository(BDPruebaSinergiaSSContext context) : base(context)
-        {
-        }
+        public SupplierRepository(BDPruebaSinergiaSSContext context) : base(context){}
 
         public IEnumerable<Supplier> GetSuppliers()
         {

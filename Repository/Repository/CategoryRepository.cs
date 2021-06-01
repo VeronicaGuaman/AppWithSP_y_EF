@@ -8,9 +8,7 @@ namespace Repository
 {
     public class CategoryRepository : Repository<Category>, ICategoryRepository
     {
-        public CategoryRepository(BDPruebaSinergiaSSContext context) : base(context)
-        {
-        }
+        public CategoryRepository(BDPruebaSinergiaSSContext context) : base(context) {}
 
         public IEnumerable<Category> GetCategories()
         {
